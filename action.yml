@@ -1,0 +1,25 @@
+name: 'Container Registry'
+description: 'Build image, authenticate with gcloud, and push image to GCR'
+author: 'David Stefan <david@carbonchain.com>'
+branding:
+  icon: 'arrow-up-circle'
+  color: 'green'
+inputs:
+  build:
+    description: 'flags that will be passed to the docker build command'
+    required: true
+  dockerfile:
+    description: 'path to your dockerfile'
+    required: true
+  image:
+    description: 'name of the image you want to build and push'
+    required: true
+  service_account_key:
+    description: 'GCP service key with storage and GCR permissions'
+    required: true
+  context:
+    description: 'path to the build context, defaults to . if not provided'
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
