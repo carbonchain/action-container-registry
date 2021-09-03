@@ -10,7 +10,7 @@ fi
 
 docker build -f "$INPUT_DOCKERFILE" -t "$INPUT_IMAGE" "$INPUT_CONTEXT"
 
-gcloud auth activate-service-account --key-file="$HOME"/gcloud.json --project "$INPUT_PROJECT"
+gcloud auth activate-service-account --key-file="$HOME"/gcloud.json --project "$INPUT_PROJECT_ID"
 
 gcloud auth configure-docker
 
