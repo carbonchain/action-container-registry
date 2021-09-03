@@ -2,11 +2,16 @@
 
 A GitHub action that builds your docker image and pushes it to Container Registry.
 
+## Prerequisites
+
+- you have enabled Container Registry in your Google Cloud project 
+- you have a service account with Storage Admin permissions
+
 ## Usage
 
 ```bash
 - name: Build and publish image to GCR
-  uses: carbonchain/action-container-registry@v1.0
+  uses: carbonchain/action-container-registry@v1.1
   with:
     project: [your-project]
     dockerfile: [path-to-your-dockerfile]
@@ -14,10 +19,19 @@ A GitHub action that builds your docker image and pushes it to Container Registr
     service_account_key: ${{ secrets.GCLOUD_AUTH }}
 ```
 
-Your `GCLOUD_AUTH` secret (or whatever you name it) must be a base64 encoded gcloud JSON service key with the Storage
-Admin permissions.
+Things to look out for:
 
-The image must be "pushable" to one of Google's container registries, i.e. it should be in the
-`gcr.io/[project]/[image]` or `eu.gcr.io/[project]/[image]` format.
+- Your `GCLOUD_AUTH` secret (or whatever you name it) must be a base64 encoded gcloud JSON service key with the Storage
+  Admin permissions.
+- The image must be "pushable" to one of Google's container registries, i.e. it should be in the
+  `gcr.io/[project]/[image]` or `eu.gcr.io/[project]/[image]` format.
+  
+## Inputs
 
-**Don't forget to enable Container Registry in your GCP project!**
+| Name                  | Required | Default | Description      |
+| --------------------- | -------- | ------- | ---------------- |
+| `context`             | ❌       | .       | Relative path to the build context |
+| `dockerfile`          | ✔        |         | Relative path to your Dockerfile |
+| `image`               | ✔        |         | The name of the image in [Container Registry format](https://cloud.google.com/container-registry/docs/pushing-and-pulling#add-registry) |
+| `service_account_key` | ✔        |         | Base64-encoded service account JSON key |
+| `project`             | ✔        |         | The ID of your Google Cloud project |
