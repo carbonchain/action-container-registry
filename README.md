@@ -1,6 +1,6 @@
-# Github Action for Container Registry
+# GitHub Action for Container Registry
 
-An GitHub Action that builds your docker image and pushes it to Container Registry.
+A GitHub action that builds your docker image and pushes it to Container Registry.
 
 ## Usage
 
@@ -8,8 +8,9 @@ An GitHub Action that builds your docker image and pushes it to Container Regist
 - name: Build and publish image to GCR
   uses: carbonchain/action-container-registry@v1.0
   with:
-    dockerfile: [path to your Dockerfile]
-    image: gcr.io/[your-project]/[image]
+    project: [your-project]
+    dockerfile: [path-to-your-dockerfile]
+    image: gcr.io/[your-project]/[image-name]
     service_account_key: ${{ secrets.GCLOUD_AUTH }}
 ```
 

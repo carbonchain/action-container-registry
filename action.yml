@@ -5,8 +5,8 @@ branding:
   icon: 'arrow-up-circle'
   color: 'green'
 inputs:
-  build:
-    description: 'flags that will be passed to the docker build command'
+  project_id:
+    description: 'id of your GCP project'
     required: true
   dockerfile:
     description: 'path to your dockerfile'
