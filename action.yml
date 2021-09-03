@@ -1,4 +1,4 @@
-name: 'Container Registry'
+name: 'Google Cloud Container Registry Build & Push'
 description: 'Build image, authenticate with gcloud, and push image to GCR'
 author: 'David Stefan <david@carbonchain.com>'
 branding:
