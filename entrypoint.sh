@@ -8,7 +8,13 @@ if [ -z "$INPUT_CONTEXT" ]; then
     INPUT_CONTEXT="."
 fi
 
-docker build -f "$INPUT_DOCKERFILE" -t "$INPUT_IMAGE" "$INPUT_CONTEXT"
+if [ -z "$INPUT_TARGET" ]; then
+    docker build -f "$INPUT_DOCKERFILE" -t "$INPUT_IMAGE" "$INPUT_CONTEXT"
+else
+    docker build -f "$INPUT_DOCKERFILE" -t "$INPUT_IMAGE"  "$INPUT_CONTEXT" --target "$INPUT_TARGET" 
+fi
+
+
 
 gcloud auth activate-service-account --key-file="$HOME"/gcloud.json --project "$INPUT_PROJECT_ID"
 

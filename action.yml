@@ -20,6 +20,9 @@ inputs:
   context:
     description: 'path to the build context, defaults to . if not provided'
     required: false
+  target:
+    description: 'which stage to build, if using multistage docker builds'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
