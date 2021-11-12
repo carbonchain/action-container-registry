@@ -32,8 +32,8 @@ Things to look out for:
 | --------------------- | -------- | ------- | ---------------- |
 | `build_args`          | ❌       |         | Comma separated list of variable assignments that will be passed as `--build-arg` to the build script, e.g. `FIRST_NAME=Knot,LAST_NAME=Kandel` |
 | `context`             | ❌       | .       | Relative path to the build context |
-| `target`              | ❌       |         | Target for [multistage builds](https://docs.docker.com/develop/develop-images/multistage-build/) |
 | `dockerfile`          | ✔        |         | Relative path to your Dockerfile |
 | `image`               | ✔        |         | The name of the image in [Container Registry format](https://cloud.google.com/container-registry/docs/pushing-and-pulling#add-registry) |
 | `service_account_key` | ✔        |         | Base64-encoded service account JSON key |
 | `project`             | ✔        |         | The ID of your Google Cloud project |
+| `target`              | ❌       |         | Target for [multistage builds](https://docs.docker.com/develop/develop-images/multistage-build/) |
