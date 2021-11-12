@@ -23,6 +23,9 @@ inputs:
   target:
     description: 'which stage to build, if using multistage docker builds'
     required: false
+  build_args:
+    description: 'list of build args that will be passed to docker build'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'

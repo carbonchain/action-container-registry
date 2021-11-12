@@ -30,6 +30,7 @@ Things to look out for:
 
 | Name                  | Required | Default | Description      |
 | --------------------- | -------- | ------- | ---------------- |
+| `build_args`          | ❌       |         | Comma separated list of variable assignments that will be passed as `--build-arg` to the build script, e.g. `FIRST_NAME=Knot,LAST_NAME=Kandel` |
 | `context`             | ❌       | .       | Relative path to the build context |
 | `target`              | ❌       |         | Target for [multistage builds](https://docs.docker.com/develop/develop-images/multistage-build/) |
 | `dockerfile`          | ✔        |         | Relative path to your Dockerfile |
